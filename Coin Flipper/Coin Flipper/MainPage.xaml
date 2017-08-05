@@ -1,0 +1,80 @@
+﻿<Page
+    x:Class="Coin_Flipper.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:Coin_Flipper"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <Page.Resources>
+        <Style TargetType="Button"
+               x:Key="ButtonStyle">
+            <Setter Property="Background" Value="{ThemeResource SystemControlBackgroundAccentBrush}"/>
+            <Setter Property="HorizontalAlignment" Value="Stretch"/>
+            <Setter Property="VerticalAlignment" Value="Stretch"/>
+            <Setter Property="FontSize" Value="40"/>
+            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="Margin" Value="5"/>
+
+
+        </Style>
+    </Page.Resources>
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <Button Name="TossButton"
+                Click="TossButton_Click"
+                Content="TOSS"
+                Style="{StaticResource ButtonStyle}"/>
+
+
+        <TextBlock Name="TossResult"
+                   Text="RESULT"
+                   Grid.Column="1"
+                   HorizontalAlignment="Center"
+                   VerticalAlignment="Center"
+                   FontFamily="Segoe UI"
+                   FontSize="40"
+                   TextWrapping="Wrap"
+                   Margin="5"
+                   Foreground="White"
+                   Canvas.ZIndex="1"
+                   
+                   />
+        <Rectangle Grid.Column="1"
+                   HorizontalAlignment="Stretch"
+                   VerticalAlignment="Stretch"
+                   Margin="5"
+                   Fill="{ThemeResource SystemControlBackgroundAccentBrush}"
+                   Canvas.ZIndex="0"
+                   >
+
+        </Rectangle>
+
+
+        <Button Name="FinishButton"
+                Click="FinishButton_Click"
+                Content="FINISH"
+                Grid.Row="1"
+                Style="{StaticResource ButtonStyle}"/>
+
+        <Button Name="clearButton"
+                Click="clearButton_Click"
+                Content="CLEAR"
+                Grid.Row="1"
+                Grid.Column="1"
+                Style="{StaticResource ButtonStyle}"/>
+
+
+    </Grid>
+</Page>
